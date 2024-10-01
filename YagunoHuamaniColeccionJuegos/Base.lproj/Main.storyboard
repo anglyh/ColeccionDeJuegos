@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" id="UKq-Ut-A25">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fbv-jf-TAi">
                             <connections>
-                                <segue destination="IAX-5S-joI" kind="show" id="OEp-1O-XtQ"/>
+                                <segue destination="IAX-5S-joI" kind="show" identifier="juegoSegue" id="OEp-1O-XtQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -67,8 +67,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKo-fn-ADD">
+                                <rect key="frame" x="35" y="347" width="320" height="216"/>
+                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNi-hE-HmZ">
-                                <rect key="frame" x="152.66666666666666" y="347" width="85" height="35"/>
+                                <rect key="frame" x="153" y="583" width="85" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Agregar"/>
                                 <connections>
@@ -79,12 +82,14 @@
                         <viewLayoutGuide key="safeArea" id="K4v-BD-Shb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZNi-hE-HmZ" firstAttribute="top" secondItem="Gf9-jF-ops" secondAttribute="bottom" constant="20" id="4X0-qj-M1q"/>
                             <constraint firstItem="Gf9-jF-ops" firstAttribute="centerX" secondItem="RU2-Vu-IZI" secondAttribute="centerX" id="Be1-Lz-rIS"/>
                             <constraint firstItem="0UD-Rl-I25" firstAttribute="top" secondItem="K4v-BD-Shb" secondAttribute="top" constant="32" id="Ean-bI-p6l"/>
                             <constraint firstItem="0UD-Rl-I25" firstAttribute="width" secondItem="Gf9-jF-ops" secondAttribute="width" id="GDH-ch-E4R"/>
+                            <constraint firstItem="ZNi-hE-HmZ" firstAttribute="top" secondItem="fKo-fn-ADD" secondAttribute="bottom" constant="20" id="OI9-kV-5FK"/>
                             <constraint firstItem="0UD-Rl-I25" firstAttribute="centerX" secondItem="RU2-Vu-IZI" secondAttribute="centerX" id="YCN-ee-t9G"/>
                             <constraint firstItem="Gf9-jF-ops" firstAttribute="top" secondItem="0UD-Rl-I25" secondAttribute="bottom" constant="20" id="eNh-dj-Mfg"/>
+                            <constraint firstItem="fKo-fn-ADD" firstAttribute="centerX" secondItem="RU2-Vu-IZI" secondAttribute="centerX" id="q7e-Ph-BwR"/>
+                            <constraint firstItem="fKo-fn-ADD" firstAttribute="top" secondItem="Gf9-jF-ops" secondAttribute="bottom" constant="20" id="u9k-hP-RvZ"/>
                             <constraint firstItem="ZNi-hE-HmZ" firstAttribute="centerX" secondItem="RU2-Vu-IZI" secondAttribute="centerX" id="z10-y7-lHN"/>
                             <constraint firstItem="0UD-Rl-I25" firstAttribute="top" secondItem="K4v-BD-Shb" secondAttribute="top" constant="32" id="zCt-O3-G3l"/>
                         </constraints>
@@ -104,6 +109,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="agregarActualizarBoton" destination="ZNi-hE-HmZ" id="bFw-J1-SWd"/>
+                        <outlet property="categoriaPicker" destination="fKo-fn-ADD" id="8JC-es-8G9"/>
                         <outlet property="imageView" destination="0UD-Rl-I25" id="hTb-4f-MlT"/>
                         <outlet property="tituloTextField" destination="Gf9-jF-ops" id="cxg-m7-bTw"/>
                     </connections>
